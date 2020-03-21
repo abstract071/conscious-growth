@@ -3,9 +3,11 @@ import React, {
   useRef
 } from 'react'
 
+import classes from './Todo.module.scss'
+
 
 const Todo = ( {
-  item,
+  item = {},
   onUpdate,
   onDelete,
   onToggle
@@ -33,8 +35,8 @@ const Todo = ( {
   }
 
   return (
-    <div className={ `note${ isEditMode ? ' selected' : '' }` }>
-      <div className="controls">
+    <div className={ classes['note'] + `${ isEditMode ? ` ${classes['selected']}` : '' }` }>
+      <div className={ classes['controls'] }>
         <input
           type="checkbox"
           id="completed"
